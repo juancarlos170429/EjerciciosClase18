@@ -53,25 +53,27 @@ que la nota mínima aprobatoria es 13. Saca el promedio de las notas aprobadas, 
 Indicar el nombre y la carrera en un console.log de los que su indice sea multiplo de 2 ejemplo: "Mi nombre es Juan y mi carrera es Biología".*/
 console.log("__________________________________________________________")
 console.log("pregunta 1 ")
-let numAprobados=0
-let numDesaprobados=0
-let promedioAprobados=0
-let promedioDesaprobados=0
-let promedio=0
+var numAprobados=0
+var numDesaprobados=0
+var promedioAprobados=0
+var promedioDesaprobados=0
+var promedio=0
 alumnos.forEach((alumno,index)=>{
     if(alumno.nota>=13){
         numAprobados++
-        promedioAprobados=promedioAprobados+(alumno.nota/alumnos.length)
+        promedioAprobados=promedioAprobados+alumno.nota
     }
     else{
         numDesaprobados++
-        promedioDesaprobados=promedioDesaprobados+(alumno.nota/alumnos.length)
+        promedioDesaprobados=promedioDesaprobados+alumno.nota
     }
     promedio=promedio+(alumno.nota/alumnos.length)
     if(index%2===0){
         console.log(`mi nombres es ${alumno.nombre} y mi  carrera es ${alumno.carrera} `)
     }
 })
+promedioAprobados=promedioAprobados/numAprobados
+promedioDesaprobados=promedioDesaprobados/numDesaprobados
 console.log(`el numero de aprobados es ${numAprobados}`)
 console.log(`el numero de desaprobados es ${numDesaprobados}`)
 console.log(`la nota promedio de los alumnos aprobados es ${promedioAprobados}`)
@@ -95,5 +97,3 @@ const arregloNuevo = alumnos.map(function(alumno) {
 })
 console.log("las nuevas notas de los alumnos son :")
 console.log(arregloNuevo)
-
-console.log(alumnos)
